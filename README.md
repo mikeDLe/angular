@@ -2,7 +2,7 @@
 
 Updated to include NGRX with store.
 
-To get CRUD change "displayedColumns = ['id', 'title', 'state', 'url', 'created_at', 'updated_at'];" to "displayedColumns = ['id', 'title', 'state', 'url', 'created_at', 'updated_at', 'actions'];"
+To get CRUD change "displayedColumns = ['id', 'gender', 'title', 'name', 'date', 'picture', 'phone', 'country']; " to "displayedColumns = ['id', 'gender', 'title', 'name', 'date', 'picture', 'phone', 'country', 'actions'];"
 
 Update the forms to taste.
 
