@@ -3,7 +3,7 @@
 <mat-toolbar color="primary">
   <span>Sociall Example</span>
   <span class="spacer"></span>
-  Search9:
+  New Data:
   <button mat-icon-button (click)="refresh()">
     <mat-icon>refresh</mat-icon>
   </button>
@@ -24,8 +24,8 @@
 
     <!-- ID Column -->
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
-      <mat-cell *matCellDef="let row" >{{row.id}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef [style.display]="'none'">Id</mat-header-cell>
+      <mat-cell *matCellDef="let row" [style.display]="'none'">{{row.id}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="gender">
       <mat-header-cell *matHeaderCellDef> Gender </mat-header-cell>
