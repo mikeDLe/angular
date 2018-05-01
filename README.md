@@ -1,3 +1,11 @@
+# Fork of https://github.com/marinantonio/angular-mat-table-crud
+
+Updated to include NGRX with store.
+
+To get CRUD change "displayedColumns = ['id', 'title', 'state', 'url', 'created_at', 'updated_at'];" to "displayedColumns = ['id', 'title', 'state', 'url', 'created_at', 'updated_at', 'actions'];"
+
+Update the forms to taste.
+
 # CRUD for Angular Material Table
 
 Project showcasing my CRUD (Create, Read, Update, Delete) implementation on Angular's Mat-Table. Most importantly frontend updates accordingly
