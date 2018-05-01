@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('Sociall App', () => {
+describe('mat-table-crud App', () => {
   let page: AppPage;
 
   beforeEach(() => {

@@ -1,76 +1,72 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppComponent } from './app.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import {
+  MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatPaginatorModule, MatSortModule,
+  MatTableModule, MatToolbarModule,
+} from '@angular/material';
+import {DataService} from './services/data.service';
+import {AddDialogComponent} from './dialogs/add/add.dialog.component';
+import {EditDialogComponent} from './dialogs/edit/edit.dialog.component';
+import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {StoreModule} from '@ngrx/store';
 import {postReducer} from './reducers/post.reducer';
-import {FormsModule} from '@angular/forms';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
-
-import { HttpClientModule } from '@angular/common/http';
-
 import { ToasterService, ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { SlimLoadingBarModule, SlimLoadingBarService } from 'ng2-slim-loading-bar';
-import { DataService } from './shared/services/dataService';
 import { HttpModule } from '@angular/http';
 import { Configuration } from './app.constants';
-import { SharedComponent} from './shared/services/shared';
-import { MatButtonModule, MatInputModule,MatFormField,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatCardModule,
-  MatPaginatorModule, 
-  MatProgressSpinnerModule, 
-  MatSortModule, 
-  MatTableModule} from '@angular/material';
-  //import { UserService } from './my-form/test';
- //import { UsertableComponent } from './components/usertable/usertable.component';
+//import { SharedComponent} from './shared/services/shared';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //UsertableComponent,
+    AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
-    MatButtonModule, 
+    HttpClientModule,
+    MatDialogModule,
+    FormsModule,
+    MatButtonModule,
     MatInputModule,
+    MatIconModule,
+    MatSortModule,
+    MatTableModule,
+    MatToolbarModule,
+    MatPaginatorModule,
+    ReactiveFormsModule,
+
+    NoopAnimationsModule,
     StoreModule.forRoot({
       post: postReducer,
     }),
-    FormsModule,
     StoreDevtoolsModule.instrument({
       maxAge:10
     }),
-    HttpClientModule,
     HttpModule,
     ToasterModule,
     SlimLoadingBarModule.forRoot(),
-    [ MatButtonModule, MatInputModule,
-      MatMenuModule,
-      MatToolbarModule,
-      MatIconModule,
-      MatCardModule,
-      MatPaginatorModule, 
-      MatProgressSpinnerModule, 
-      MatSortModule, 
-      MatTableModule]
+  ],
+  entryComponents: [
+    AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
   providers: [
-
+    DataService,
     ToasterService,
     SlimLoadingBarService,
-    DataService,
     Configuration,
-    SharedComponent,
-    
+    //SharedComponent,
   ],
   bootstrap: [AppComponent]
 })
