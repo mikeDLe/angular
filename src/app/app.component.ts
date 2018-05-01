@@ -24,7 +24,7 @@ import {Store} from '@ngrx/store'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  displayedColumns = ['id', 'gender', 'title', 'name', 'date', 'picture', 'phone', 'country']; 
+  displayedColumns = ['id', 'gender', 'title', 'name', 'date', 'picture', 'phone', 'country', 'actions']; 
   exampleDatabase: DataService | null;
   dataSource: ExampleDataSource | null;
   index: number;
